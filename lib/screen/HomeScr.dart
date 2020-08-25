@@ -30,6 +30,9 @@ class HomeScreen extends StatelessWidget {
           child: Expanded(
             child: WebviewScaffold(
               url: _url,
+              appCacheEnabled: true,
+              withJavascript: true,
+              withZoom: false,
             ),
             /*WebView(
                 key: _key,
