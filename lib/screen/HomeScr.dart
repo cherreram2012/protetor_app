@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:webview_flutter/webview_flutter.dart';
 import 'package:flutter_webview_plugin/flutter_webview_plugin.dart';
+import 'dart:async';
 
 /*
  *
@@ -10,6 +11,7 @@ import 'package:flutter_webview_plugin/flutter_webview_plugin.dart';
 class HomeScreen extends StatelessWidget {
   final _key = UniqueKey();
   var _url = "https://protetor.app/";
+  Completer<WebViewController> _controller = Completer<WebViewController>();
 
   /*
    * Widget constructor.
@@ -26,18 +28,17 @@ class HomeScreen extends StatelessWidget {
         title: Text("App Protetor"),
       ),
       body: Center(
-        child: Center(
-          child: Expanded(
-            child: WebviewScaffold(
-              url: _url,
-            ),
-            /*WebView(
-                key: _key,
-                javascriptMode: JavascriptMode.unrestricted,
-                initialUrl: _url),
-          ),*/
-          ),
+        child: WebviewScaffold(
+          url: _url,
         ),
+        /*WebView(
+          key: _key,
+          javascriptMode: JavascriptMode.unrestricted,
+          initialUrl: _url,
+          onWebViewCreated: (WebViewController webViewController) {
+            _controller.complete(webViewController);
+          },
+        ),*/
       ),
     );
   }
