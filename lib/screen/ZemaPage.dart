@@ -1,25 +1,26 @@
 import 'package:flutter/material.dart';
-import 'package:protetor_app/screen/ZemaPage.dart';
 import 'package:protetor_app/screen/ZemaProtetorPage.dart';
 import 'package:webview_flutter/webview_flutter.dart';
 import 'package:flutter_webview_plugin/flutter_webview_plugin.dart';
 import 'dart:async';
+
+import 'HomeScr.dart';
 
 /*
  *
  * Screen widget <Home>.
  *
  */
-class HomeScreen extends StatelessWidget {
+class ZemaScreen extends StatelessWidget {
   final flutterWebViewPlugin = FlutterWebviewPlugin();
   final _key = UniqueKey();
-  var _url = "https://protetor.app/";
+  var _url = "https://zema.com/";
   Completer<WebViewController> _controller = Completer<WebViewController>();
 
   /*
    * Widget constructor.
    */
-  HomeScreen({Key key}) : super(key: key);
+  ZemaScreen({Key key}) : super(key: key);
 
   /*
    * Widget render method.
@@ -34,23 +35,19 @@ class HomeScreen extends StatelessWidget {
               child: Text("Zema Saúde"),
               onPressed:  () {
                 flutterWebViewPlugin.close();
-                flutterWebViewPlugin.launch("https://zema.protetor.app/");
-                //MaterialPageRoute(builder:(context) => ZemaProtetorScreen());
-                //_url =  "https://zema.protetor.app/";
+                      MaterialPageRoute(builder:(context) => ZemaProtetorScreen());
                     },),
             FlatButton(
               child: Text("Minha Conta"),
               onPressed:  () {
                 flutterWebViewPlugin.close();
-                flutterWebViewPlugin.launch("https://protetor.app/");
-                //MaterialPageRoute(builder:(context) => HomeScreen());
+                      MaterialPageRoute(builder:(context) => HomeScreen());
                     },),
             FlatButton(
               child: Text("Lojas Zema"),
               onPressed:  () {
                 flutterWebViewPlugin.close();
-                flutterWebViewPlugin.launch("https://zema.com/");
-                      //MaterialPageRoute(builder:(context) => ZemaScreen());
+                      MaterialPageRoute(builder:(context) =>ZemaScreen());
                     },),    
         ]
       ),
