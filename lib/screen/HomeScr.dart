@@ -27,6 +27,7 @@ class _HomeScreenState extends State<HomeScreen> {
   void initState() {
     super.initState();
 
+    flutterWebViewPlugin.hide();
     _option = OptionAppLink.BtnMinhaConta;
     _url = AppUri.MinhaContaLink;
 
@@ -40,6 +41,7 @@ class _HomeScreenState extends State<HomeScreen> {
             print("======================");
             break;
           case WebViewState.finishLoad:
+            flutterWebViewPlugin.show();
             print("======================");
             print('finishLoad');
             print("======================");
@@ -91,6 +93,7 @@ class _HomeScreenState extends State<HomeScreen> {
             ),
           ),
           onPressed: () {
+            flutterWebViewPlugin.hide();
             flutterWebViewPlugin.reloadUrl(AppUri.ZemaSaudeLink);
             setState(() {
               _option = OptionAppLink.BtnZemaSaude;
@@ -107,6 +110,7 @@ class _HomeScreenState extends State<HomeScreen> {
             ),
           ),
           onPressed: () {
+            flutterWebViewPlugin.hide();
             flutterWebViewPlugin.reloadUrl(AppUri.ZemaLojasLink);
             setState(() {
               _option = OptionAppLink.BtnZemaLojas;
@@ -123,6 +127,7 @@ class _HomeScreenState extends State<HomeScreen> {
             ),
           ),
           onPressed: () {
+            flutterWebViewPlugin.hide();
             flutterWebViewPlugin.reloadUrl(AppUri.MinhaContaLink);
             setState(() {
               _option = OptionAppLink.BtnMinhaConta;
