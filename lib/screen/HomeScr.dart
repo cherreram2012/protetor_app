@@ -81,16 +81,24 @@ class _HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(actions: <Widget>[
+      appBar: AppBar(backgroundColor: Color(0xFF1F3976), actions: <Widget>[
         // action button
         FlatButton(
-          child: Text(
-            "Zema Saúde",
-            style: TextStyle(
-              color: (_option == OptionAppLink.BtnZemaSaude)
-                  ? const Color(ItemAtivo)
-                  : const Color(ItemInativo),
-            ),
+          child: Row(
+            children: <Widget>[
+              Icon(Icons.star,
+                  color: (_option == OptionAppLink.BtnZemaSaude)
+                      ? const Color(ItemAtivo)
+                      : const Color(ItemInativo),
+                  size: 15),
+              Text(" Zema Saúde",
+                style: TextStyle(
+                  color: (_option == OptionAppLink.BtnZemaSaude)
+                      ? const Color(ItemAtivo)
+                      : const Color(ItemInativo),
+                ),
+              ),
+            ],
           ),
           onPressed: () {
             flutterWebViewPlugin.hide();
@@ -101,13 +109,21 @@ class _HomeScreenState extends State<HomeScreen> {
           },
         ),
         FlatButton(
-          child: Text(
-            "Lojas Zema",
-            style: TextStyle(
-              color: (_option == OptionAppLink.BtnZemaLojas)
-                  ? const Color(ItemAtivo)
-                  : const Color(ItemInativo),
-            ),
+          child: Row(
+            children: <Widget>[
+              Icon(Icons.add_shopping_cart,
+                  color: (_option == OptionAppLink.BtnZemaLojas)
+                      ? const Color(ItemAtivo)
+                      : const Color(ItemInativo),
+                  size: 15),
+              Text(" Lojas Zema",
+                style: TextStyle(
+                  color: (_option == OptionAppLink.BtnZemaLojas)
+                      ? const Color(ItemAtivo)
+                      : const Color(ItemInativo),
+                ),
+              ),
+            ],
           ),
           onPressed: () {
             flutterWebViewPlugin.hide();
@@ -118,13 +134,21 @@ class _HomeScreenState extends State<HomeScreen> {
           },
         ),
         FlatButton(
-          child: Text(
-            "Minha Conta",
-            style: TextStyle(
-              color: (_option == OptionAppLink.BtnMinhaConta)
-                  ? const Color(ItemAtivo)
-                  : const Color(ItemInativo),
-            ),
+          child: Row(
+            children: <Widget>[
+              Icon(Icons.account_circle,
+                  color: (_option == OptionAppLink.BtnMinhaConta)
+                      ? const Color(ItemAtivo)
+                      : const Color(ItemInativo),
+                  size: 15),
+              Text(" Minha Conta",
+                style: TextStyle(
+                  color: (_option == OptionAppLink.BtnMinhaConta)
+                      ? const Color(ItemAtivo)
+                      : const Color(ItemInativo),
+                ),
+              ),
+            ],
           ),
           onPressed: () {
             flutterWebViewPlugin.hide();
