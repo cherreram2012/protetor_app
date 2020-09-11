@@ -28,8 +28,8 @@ class _HomeScreenState extends State<HomeScreen> {
     super.initState();
 
     flutterWebViewPlugin.hide();
-    _option = OptionAppLink.BtnMinhaConta;
-    _url = AppUri.MinhaContaLink;
+    _option = OptionAppLink.BtnZemaSaude;
+    _url = AppUri.ZemaSaudeLink;
 
     // Acrescento um listener ao evento onStateChanged
     _onStateChanged = flutterWebViewPlugin.onStateChanged.listen(
