@@ -84,6 +84,7 @@ class _HomeScreenState extends State<HomeScreen> {
       appBar: AppBar(backgroundColor: Color(0xFF1F3976), actions: <Widget>[
         // action button
         FlatButton(
+          padding:EdgeInsets.only(right:5.0,left:5.0),
           child: Row(
             children: <Widget>[
               Icon(Icons.star,
@@ -109,6 +110,7 @@ class _HomeScreenState extends State<HomeScreen> {
           },
         ),
         FlatButton(
+          padding: EdgeInsets.only(right:5.0,left:5.0),
           child: Row(
             children: <Widget>[
               Icon(Icons.add_shopping_cart,
@@ -134,6 +136,7 @@ class _HomeScreenState extends State<HomeScreen> {
           },
         ),
         FlatButton(
+          padding: EdgeInsets.only(right:5.0,left:5.0),
           child: Row(
             children: <Widget>[
               Icon(Icons.account_circle,
